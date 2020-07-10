@@ -46,7 +46,7 @@ Like before, we can animate the process.
 
 In the previous examples our generated image is "seeded" with the content image, i.e. the algorithm uses the content image as a starting off point to iteratively apply the style.
 
-However, starting from the content image is not necessary. The below image is initialized as random noise, however the dog will still appear as the model is conditioned on the content image of the dog.
+However, starting from the content image is not necessary. The below image is initialized as random noise but the dog will still appear as the model is conditioned on the content image.
 
 <p align="center">
  <img src="./assets/starry-dog-from-noise.png">
