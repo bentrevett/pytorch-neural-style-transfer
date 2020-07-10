@@ -110,6 +110,7 @@ style_image = style_image.to(device)
 
 input_image = content_image.clone().requires_grad_()
 
+# uncomment if want to generate image starting from random noise
 #input_image = content_image.clone().normal_().requires_grad_()
 
 optimizer = optim.LBFGS([input_image])
@@ -168,4 +169,4 @@ for file_name in file_names:
     images.append(imageio.imread(file_name))
 imageio.mimsave('results/image-animated.gif', images)
 
-pygifsicle.optimize('results/image-animated.gif', 'results/image-animated-compressed.gif')
+pygifsicle.optimize('results/image-animated.gif')
