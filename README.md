@@ -25,23 +25,23 @@ The whole process is iterative, therefore we can create an animation from each s
  <img src="./assets/starry-dog.gif">
 </p>
 
-This process generalizes to any content and style image, although results may vary. Here, we use a different content image - a dancer.
+This process generalizes to any content and style image, although results may vary. Here, we use different content and style images.
 
 <p align="center">
  <img src="./assets/dancing.jpg" height="300px">
- <img src="./assets/starry-night.jpg" height="300px">
+ <img src="./assets/abstract.jpg" height="300px">
 </p>
 
 Again, the neural style transfer algorithm can be applied to transfer the style of the second image to the content of the first.
 
 <p align="center">
- <img src="./assets/starry-dancing.png">
+ <img src="./assets/abstract-dancing.png">
 </p>
 
 Like before, we can animate the process.
 
 <p align="center">
- <img src="./assets/starry-dancing.gif">
+ <img src="./assets/abstract-dancing.gif">
 </p>
 
 In the previous examples our generated image is "seeded" with the content image, i.e. the algorithm uses the content image as a starting off point to iteratively apply the style.
@@ -61,13 +61,25 @@ From the animation we can see that the style is generated first and then the con
 We can also use the dancer as the content image and start from random noise:
 
 <p align="center">
- <img src="./assets/starry-dancing-from-noise.png">
+ <img src="./assets/abstract-dancing-from-noise.png">
 </p>
 
 Again, the style appears first, then the content.
 
 <p align="center">
- <img src="./assets/starry-dancing-from-noise.gif">
+ <img src="./assets/abstract-dancing-from-noise.gif">
+</p>
+
+One issue with neural style transfer is the presence of artifacts, see the shoulder and skirt of the dancer (mixed with the style of [The Great Wave off Kanagawa](https://en.wikipedia.org/wiki/The_Great_Wave_off_Kanagawa)) below:
+
+<p align="center">
+ <img src="./assets/tsunami-dancing-1e6sw.png">
+</p>
+
+These can be removed by reducing the weight of the style loss, `style_weight`, at the cost of reducing the amount of style transferred to the content. Here is the same content and style image but with the `style_weight` set to 100x less than before:
+
+<p align="center">
+ <img src="./assets/tsunami-dancing-1e4sw.png">
 </p>
 
 ### Requirements
