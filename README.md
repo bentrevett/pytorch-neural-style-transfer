@@ -76,10 +76,17 @@ One issue with neural style transfer is the presence of artifacts, see the shoul
  <img src="./assets/tsunami-dancing-1e6sw.png">
 </p>
 
-These can be removed by reducing the weight of the style loss, `style_weight`, at the cost of reducing the amount of style transferred to the content. Here is the same content and style image but with the `style_weight` set to 100x less than before:
+
+These artifacts usually appear when the style image is too "busy". They can be removed by reducing the weight of the style loss, `style_weight`, at the cost of reducing the amount of style transferred to the content. Here is the same content and style image but with the `style_weight` set to 100x less than before:
 
 <p align="center">
  <img src="./assets/tsunami-dancing-1e4sw.png">
+</p>
+
+Another solution is to decrease the learning rate. Below is the image with the increased `style_weight` but with a 40x smaller learning rate:
+
+<p align="center">
+ <img src="./assets/tsunami-dancing-25e-3lr.png">
 </p>
 
 ### Requirements
