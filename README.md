@@ -7,8 +7,8 @@ Neural transfer involves using neural networks to generate an image that is base
 As an example, we'll use the dog on the left as the content image and the painting on the right as the style image.
 
 <p align="center">
- <img src="./assets/dog.jpg" style="width:300px;">
- <img src="./assets/starry-night.jpg" style="width:300px;">
+ <img src="./assets/dog.jpg" width="300px">
+ <img src="./assets/starry-night.jpg" width="300px">
 </p>
 
 By running the neural style transfer algorithm with these two images we get the following:
@@ -28,8 +28,8 @@ The whole process is iterative, therefore we can create an animation from each s
 This process generalizes to any content and style image, although results may vary. Here, we use a different content image - a dancer.
 
 <p align="center">
- <img src="./assets/dancing.jpg" style="height:300px;">
- <img src="./assets/starry-night.jpg" style="height:300px;">
+ <img src="./assets/dancing.jpg" height="300px">
+ <img src="./assets/starry-night.jpg" height="300px">
 </p>
 
 Again, the neural style transfer algorithm can be applied to transfer the style of the second image to the content of the first.
