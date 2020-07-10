@@ -70,14 +70,26 @@ Again, the style appears first, then the content.
  <img src="./assets/abstract-dancing-from-noise.gif">
 </p>
 
-One issue with neural style transfer is the presence of artifacts, see the shoulder and skirt of the dancer (mixed with the style of [The Great Wave off Kanagawa](https://en.wikipedia.org/wiki/The_Great_Wave_off_Kanagawa)) below:
+One issue with neural style transfer is the presence of artifacts. Let's combine these two images: 
+
+<p align="center">
+ <img src="./assets/dancing.jpg" height="300px">
+ <img src="./assets/tsunami.jpg" height="300px" width="350px">
+</p>
+
+Below we can see the shoulder and skirt of the dancer are covered in artifacts.
 
 <p align="center">
  <img src="./assets/tsunami-dancing-1e6sw.png">
 </p>
 
+These artifacts appear when the style image is too "busy", i.e. lots of high frequency areas in the image such as the froth of the waves in the style image. If we switch the content and style images around we get no artifacts.
 
-These artifacts usually appear when the style image is too "busy". They can be removed by reducing the weight of the style loss, `style_weight`, at the cost of reducing the amount of style transferred to the content. Here is the same content and style image but with the `style_weight` set to 100x less than before:
+<p align="center">
+ <img src="./assets/dancing-tsunami.png">
+</p>
+
+One method of removing the artifacts is by reducing the weight of the style loss, `style_weight`, at the cost of reducing the amount of style transferred to the content. Here is the same content and style image but with the `style_weight` set to 100x less than before:
 
 <p align="center">
  <img src="./assets/tsunami-dancing-1e4sw.png">
